@@ -1,0 +1,36 @@
+@import "./normalize.css";
+.myclass1{
+    color: red;
+}
+.logo{
+    width: 70px;
+    height: 70px;
+}
+/* 下面为题目页面的css */
+#title_name{
+    float: right;
+    margin-left: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.topic{
+    font-size: 30px;
+    font-style: italic;
+}
+#topic_limit{
+    text-align: center;
+    font-size: 15px;
+}
+#topic_t{
+    text-align: center;
+}
+.topic_{
+    font-size: 18px;
+    font-style: italic;
+}
+#topic_requirement{
+    margin-top: 2px;
+    margin-left: 50px;
+}
+#topic_reminder{
+    text-align: center;
+}

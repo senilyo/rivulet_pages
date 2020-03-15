@@ -2,7 +2,7 @@
   <div>
     <el-input type="textarea" :rows="30" placeholder="请输入代码" v-model="code"></el-input>
     <el-button type="danger" @click="codeReset">清空</el-button>
-    <el-button type="success" @click="submit">提交</el-button>
+    <el-button type="success" @click="submit"><router-link to="/returnresult">提交</router-link></el-button>
   </div>
 </template>
 
