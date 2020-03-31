@@ -1,14 +1,20 @@
 <template>
   <div>
     <el-input type="textarea" :rows="30" placeholder="请输入代码" v-model="code"></el-input>
-    <el-button type="danger" @click="codeReset">清空</el-button>
-    <el-button type="success" @click="submit"><router-link to="/returnresult">提交</router-link></el-button>
+    <el-button type="danger" @click="codeReset" plain>清空</el-button>
+
+    <router-link to="/returnresult">
+      <el-button type="primary" @click="submit" plain>提交</el-button>
+    </router-link>
   </div>
 </template>
 
 <script>
 const baseURL = "http://localhost:10032/";
 export default {
+  mounted() {
+    console.log(this.$cookies.get("user_id"));
+  },
   data() {
     return {
       code: ""
