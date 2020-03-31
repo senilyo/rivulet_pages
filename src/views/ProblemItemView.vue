@@ -1,9 +1,6 @@
 <template>
-  <div class="topic">
-    <nav class="navbar navbar-default">
-      <div class="navbar-header"></div>
-    </nav>
-
+  <div class="problemItem">
+    <Nav></Nav>
     <el-row class="tac">
       <el-col :span="4">
         <el-menu
@@ -33,8 +30,8 @@
       <el-col :span="18">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
-            <span style="font-weight:700">{{content.topic_id}}:</span>
-            <span>{{content.topic_title}}</span>
+            <span style="font-weight:700;font-size:80%">No.{{content.topic_id}}</span>
+            <span style="margin-left:3%;font-size:130%;font-weight:600">{{content.topic_title}}</span>
             <span style="float: right;font-size:10%;color:#C0C0C0">
               <pre>
                 时间限制:{{content.topic_limit_time}}
@@ -75,17 +72,56 @@
 <style scoped>
 </style>
 <script>
+import Nav from "@/components/NavComp.vue";
 export default {
+  components: {
+    Nav
+  },
   data() {
     return {
       content: ""
     };
   },
   mounted() {
-    this.axios.get("http://106.54.51.67:13289/api/topic").then(body => {
-      this.content = body.data;
-    });
-    this.$cookies.set("user_id","111222333");
+    // this.axios.get("http://106.54.51.67:13289/api/topic").then(body => {
+    //   this.content = body.data;
+    // });
+    const id = this.$route.query.id;
+    if (id == 1000) {
+      this.content = {
+        'topic_id': 1000,
+        'topic_title': "简单的A+B",
+        'topic_tag': null,
+        'topic_details': "简单的A+B",
+        'topic_input': "两个数字",
+        'topic_output': "两数之和",
+        'topic_sample_input': "1 2",
+        'topic_sample_output': "3",
+        'topic_reminder': null,
+        'topic_limit_time': "2020-03-31T14:19:09.485+0000",
+        'topic_limit_memory': "10000kb",
+        'topic_difficulty': null,
+        'topic_pass_count': 0,
+        'topic_onload_count': 0
+      }
+    } else if (id == 1001) {
+      this.content = {
+        'topic_id': 1001,
+        'topic_title': "不是那么简单的A+B",
+        'topic_tag': null,
+        'topic_details': "不简单的A+B",
+        'topic_input': "两个数字",
+        'topic_output': "两数之asdlkgjnelwk",
+        'topic_sample_input': "1 2",
+        'topic_sample_output': "???????",
+        'topic_reminder': null,
+        'topic_limit_time': "2020-03-31T14:19:09.485+0000",
+        'topic_limit_memory': "10000kb",
+        'topic_difficulty': null,
+        'topic_pass_count': 0,
+        'topic_onload_count': 0
+      }
+    }
   },
   methods: {
     btnclick() {

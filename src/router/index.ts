@@ -7,13 +7,13 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'LoginView',
-    component: () => import('@/views/LoginView.vue')
+    name: 'IndexView',
+    component: () => import('@/views/IndexView.vue')
   },
   {
-    path: '/TopicView',
-    name: 'TopicView',
-    component: () => import('@/views/TopicView.vue')
+    path: '/problemItem',
+    name: 'ProblemItemView',
+    component: () => import('@/views/ProblemItemView.vue')
   },
   {
     path: '/codeInput',
@@ -26,18 +26,16 @@ const routes = [
     component: () => import('@/views/ReturnResult.vue')
   },
   {
-    path: '/topicSearch',
-    name: 'topicSearch',
-    component: () => import('@/views/TopicSearch.vue')
+    path: '/problemSet',
+    name: 'problemSet',
+    component: () => import('@/views/ProblemSet.vue'),
   },
-  {
-    path: '/searchReturn',
-    name: 'searchReturn',
-    component: () => import('@/views/SearchReturn.vue')
-  },
+
+
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 
